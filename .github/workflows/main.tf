@@ -24,3 +24,11 @@ resource "azurerm_app_service" "app" {
   app_service_plan_id = azurerm_app_service_plan.asp.id
 }
 
+module "app_service" {
+  source                = "./tf-app-service"
+  resource_group_name   = "FaisalsRSG"
+  location              = "East US"
+  app_service_plan_name = "FaisalsASP"
+  app_service_name      = "FaisalsAS"
+}
+
